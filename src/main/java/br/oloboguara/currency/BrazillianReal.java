@@ -5,25 +5,27 @@ package br.oloboguara.currency;
 
 /**
  * @author dondiego
- *
+ * 
  */
 public class BrazillianReal {
 
-	private int amount = 10;
-	
+	private int amount;
+
 	/**
 	 * 
-	 * @param i
+	 * @param value
 	 */
-	public BrazillianReal(int i) {
+	public BrazillianReal(int value) {
+		this.amount = value;
 	}
 
 	/**
 	 * 
-	 * @param i
+	 * @param multiplier
+	 * @return
 	 */
-	public void times(int i) {
-		
+	public BrazillianReal times(int multiplier) {
+		return new BrazillianReal(this.amount * multiplier);
 	}
 
 	/**
@@ -31,7 +33,7 @@ public class BrazillianReal {
 	 * @return
 	 */
 	public int amount() {
-		return amount;
+		return this.amount;
 	}
 
 }
