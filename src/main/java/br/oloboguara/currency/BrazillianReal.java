@@ -35,5 +35,12 @@ public class BrazillianReal {
 	public int amount() {
 		return this.amount;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		BrazillianReal other = (BrazillianReal) obj;
+		return other.amount == this.amount;
+	}
 
 }

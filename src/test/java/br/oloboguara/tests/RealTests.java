@@ -3,7 +3,8 @@
  */
 package br.oloboguara.tests;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import br.oloboguara.currency.BrazillianReal;
@@ -16,15 +17,27 @@ public class RealTests {
 
 	@Test
 	public void testMultiplication() {
-		
+
 		BrazillianReal five = new BrazillianReal(5);
 		BrazillianReal ten = five.times(2);
-		Assert.assertTrue(5 == five.amount());
+		assertTrue(5 == five.amount());
 		five.times(2);
 		ten = ten.times(2);
-		Assert.assertTrue(10 != ten.amount());
-		Assert.assertTrue(20 == ten.amount());
+		assertTrue(10 != ten.amount());
+		assertTrue(20 == ten.amount());
 
+	}
+
+	@Test
+	public void reaisEquals() {
+		BrazillianReal five = new BrazillianReal(5);
+		BrazillianReal secondFive = new BrazillianReal(5);
+		BrazillianReal six = new BrazillianReal(6);
+
+		assertTrue(five.equals(secondFive));
+		assertTrue(!five.equals(six));
+		assertTrue(five != secondFive);
+		assertTrue(five != six);
 	}
 
 }
